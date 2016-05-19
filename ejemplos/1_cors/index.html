@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CORS</title>
+</head>
+<body>
+</body>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://jsonplaceholder.typicode.com/posts', true);
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === XMLHttpRequest.DONE) {
+            if(xhr.status === 200) {
+                // Devuelve 100 objetos
+                console.log(JSON.parse(xhr.responseText));
+            } else {
+                console.log("Error "+xhr.status)
+            }
+        }
+    };
+    xhr.send();
+</script>
+</html>
